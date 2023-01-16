@@ -13,8 +13,6 @@ To be built with
  Maintained by 
 - [@pacifiquem](https://github.com/pacifiquem)   
 - [@ndzhwr](https://github.com/ndzhwr)
-- [@Ernor1](https://github.com/Ernor1)
-
 
 ### Contributors
 List of contributors  
