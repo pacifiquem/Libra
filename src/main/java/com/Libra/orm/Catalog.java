@@ -6,6 +6,4 @@ import java.util.Set;
 import javax.persistence.*;
 
 
-public class Catalog {
-
-}
+public class Catalog {}

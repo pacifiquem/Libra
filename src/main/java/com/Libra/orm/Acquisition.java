@@ -18,6 +18,4 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-public class Acquisition {
-    
-}
+public class Acquisition {}
