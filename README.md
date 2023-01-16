@@ -14,9 +14,5 @@ To be built with
 - [@pacifiquem](https://github.com/pacifiquem)   
 - [@ndzhwr](https://github.com/ndzhwr)
 
-### Contributors
-List of contributors  
-
 ## Licence
 This project under [Apance Licence 2.0](LICENCE)
-
