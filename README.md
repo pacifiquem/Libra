@@ -11,7 +11,7 @@ To be built with
 
  ### Maintainers
  Maintained by 
-- [@pacifiquem](https://github.com/pacifiquem)   
+- [@pacifiquem](https://github.com/pacifiquem)
 - [@ndzhwr](https://github.com/ndzhwr)
 
 ## Licence
