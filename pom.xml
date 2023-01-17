@@ -242,10 +242,20 @@
         <developer>
             <name>Pacifique Murangwa</name>
             <email>pacifiquemurangwa001@gmail.com</email>
+
             <roles>
                 <role>Project Manager</role>
             </roles>
         </developer>
+        <developer>
+            <name>Rukundo Honore</name>
+            <email>honorerukundo74@gmail.com</email>
+
+            <roles>
+                <role>Group Captain</role>
+            </roles>
+        </developer>
+
     </developers>
     <inceptionYear>2022</inceptionYear>
     <organization>
