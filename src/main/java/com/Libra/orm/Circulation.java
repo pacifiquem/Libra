@@ -4,4 +4,6 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Circulation {}
+public class Circulation {
+    
+}
