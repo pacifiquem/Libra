@@ -2,6 +2,7 @@ package com.Libra.orm.libraApp;
 
 import java.util.Date;
 
+import com.Libra.orm.Book;
 import com.Libra.orm.Patron;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -16,6 +17,7 @@ public class Starter {
     public static void main(String[] args) {
 
         Patron patron = new Patron("Jane", "Doe", "+250789012345");
+        Book book = new Book("Title1", "The fault in our stars", "John Doe", 205, new Date());
         patron.setDob(new Date());
         patron.setEmail("janedoe@example.com");
 
@@ -31,6 +33,7 @@ public class Starter {
 
         //saving object
         session.saveOrUpdate(patron);
+        session.saveOrUpdate(book);
 
         transaction.commit();
         session.close();

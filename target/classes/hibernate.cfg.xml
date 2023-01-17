@@ -39,5 +39,6 @@
         <mapping class="com.Libra.orm.Patron" />
         <mapping class="com.Libra.orm.Reporting" />
         <mapping class="com.Libra.orm.Serial" />
+        <mapping class="com.Libra.orm.Book" />
     </session-factory>
 </hibernate-configuration>

@@ -35,5 +35,6 @@
 		<mapping class="rw.ac.rca.smis.orm.Instructor" />
 		<mapping class="rw.ac.rca.smis.orm.Student" />
 		<mapping class="rw.ac.rca.smis.orm.Mark" />
+		<mapping class="com.Libra.orm.Book" />
 	</session-factory>
 </hibernate-configuration>

@@ -15,9 +15,9 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-interface PatronInterface {
-    void borrowHistory();
-}
+//interface PatronInterface {
+//    void borrowHistory();
+//}
 
 @Entity
 @Table(name = "patron")
