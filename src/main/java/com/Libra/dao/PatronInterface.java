@@ -1,4 +1,4 @@
-package com.Libra.orm;
+package com.Libra.dao;
 
 public interface PatronInterface {
     void borrowHistory();

@@ -6,9 +6,9 @@
         <property name="hibernate.transaction.factory_class">org.hibernate.transaction.JDBCTransactionFactory</property>
 
         <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
-        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/Libra</property>
-        <property name="hibernate.connection.username"></property>
-        <property name="hibernate.connection.password"></property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/libra</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">?dh123456</property>
 
         <property name="hibernate.session_factory_name">SmisSessionFactory</property>
         <property name="hibernate.connection.pool_size">1</property>

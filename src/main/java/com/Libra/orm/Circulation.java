@@ -1,9 +1,8 @@
 package com.Libra.orm;
 
-import javax.persistence.*;
-import java.util.ArrayList;
+import com.Libra.dao.CirculationInterface;
+
 import java.util.Date;
-import java.util.List;
 
 
 public class Circulation implements CirculationInterface {

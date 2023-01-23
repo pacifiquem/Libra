@@ -1,21 +1,65 @@
 package com.Libra.orm;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Set;
+import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.util.*;
 
 import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 
-public class Acquisition {}
+@Entity
+@Table(name = "acquisition")
+public class Acquisition {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    @ManyToOne
+    @JoinColumn(name = "librarian_id")
+    private Librarian librarian;
+    @OneToMany(cascade = CascadeType.ALL,mappedBy = "acquisition")
+    private List<Book> books;
+    public Acquisition(List<Book> books, LocalDate purchaseDate, BigDecimal cost, Librarian librarian) {
+        this.books = books;
+        this.purchaseDate = purchaseDate;
+        this.cost = cost;
+        this.librarian = librarian;
+    }
+
+    @Column(name = "purchase_date")
+    private LocalDate purchaseDate;
+
+    @Column(name = "cost")
+    private BigDecimal cost;
+
+    public LocalDate getPurchaseDate() {
+        return purchaseDate;
+    }
+
+    public void setPurchaseDate(LocalDate purchaseDate) {
+        this.purchaseDate = purchaseDate;
+    }
+
+    public BigDecimal getCost() {
+        return cost;
+    }
+
+    public void setCost(BigDecimal cost) {
+        this.cost = cost;
+    }
+
+    public Librarian getLibrarian() {
+        return librarian;
+    }
+
+    public void setLibrarian(Librarian librarian) {
+        this.librarian = librarian;
+    }
+
+
+
+    // Additional fields, getters and setters
+}
+
+
+
+
+

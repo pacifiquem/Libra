@@ -1,50 +1,59 @@
 package com.Libra.orm;
-
+import java.util.*;
 import javax.persistence.*;
-import java.util.Date;
 
 @Entity
-@Table(name = "book")
+@Table(name="catalogue")
 public class Book {
-
-    public Book(String title, String name, String author, int bookNum, Date pubDate){
-        this.title = title;
-        this.name = name;
-        this.author = author;
-        this.bookNum = bookNum;
-        this.pubDate = pubDate;
-    }
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private int id;
+
+    public Book(String title, String author, String ISBN, String publisher, Date publicationDate, int edition, String subject, String description, int numberOfCopies, int availableCopies) {
+        this.title = title;
+        this.author = author;
+        this.ISBN = ISBN;
+        this.publisher = publisher;
+        this.publicationDate = publicationDate;
+        this.edition = edition;
+        this.subject = subject;
+        this.description = description;
+        this.numberOfCopies = numberOfCopies;
+        this.availableCopies = availableCopies;
+    }
+
+    @Column(name = "title")
     private String title;
-    private String name;
+
+    @Column(name = "author")
     private String author;
-    private int bookNum;
-    private Date pubDate;
 
-    public int getId() {
-        return id;
-    }
+    @Column(name = "ISBN")
+    private String ISBN;
 
-    public void setId(int id) {
-        this.id = id;
-    }
+    @Column(name = "publisher")
+    private String publisher;
 
+    @Column(name = "publication_date")
+    private Date publicationDate;
+
+    @Column(name = "edition")
+    private int edition;
+
+    @Column(name = "subject")
+    private String subject;
+
+    @Column(name = "description")
+    private String description;
+    @OneToMany(cascade = CascadeType.ALL,mappedBy = "book")
+    private List<Loan>loans;
     public String getTitle() {
         return title;
     }
 
     public void setTitle(String title) {
         this.title = title;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public String getAuthor() {
@@ -55,19 +64,73 @@ public class Book {
         this.author = author;
     }
 
-    public int getBookNum() {
-        return bookNum;
+    public String getISBN() {
+        return ISBN;
     }
 
-    public void setBookNum(int bookNum) {
-        this.bookNum = bookNum;
+    public void setISBN(String ISBN) {
+        this.ISBN = ISBN;
     }
 
-    public Date getPubDate() {
-        return pubDate;
+    public String getPublisher() {
+        return publisher;
     }
 
-    public void setPubDate(Date pubDate) {
-        this.pubDate = pubDate;
+    public void setPublisher(String publisher) {
+        this.publisher = publisher;
     }
+
+    public Date getPublicationDate() {
+        return publicationDate;
+    }
+
+    public void setPublicationDate(Date publicationDate) {
+        this.publicationDate = publicationDate;
+    }
+
+    public int getEdition() {
+        return edition;
+    }
+
+    public void setEdition(int edition) {
+        this.edition = edition;
+    }
+
+    public String getSubject() {
+        return subject;
+    }
+
+    public void setSubject(String subject) {
+        this.subject = subject;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public int getNumberOfCopies() {
+        return numberOfCopies;
+    }
+
+    public void setNumberOfCopies(int numberOfCopies) {
+        this.numberOfCopies = numberOfCopies;
+    }
+
+    public int getAvailableCopies() {
+        return availableCopies;
+    }
+
+    public void setAvailableCopies(int availableCopies) {
+        this.availableCopies = availableCopies;
+    }
+
+    @Column(name = "number_of_copies")
+    private int numberOfCopies;
+
+    @Column(name = "available_copies")
+    private int availableCopies;
 }

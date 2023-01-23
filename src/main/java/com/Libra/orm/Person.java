@@ -1,19 +1,46 @@
 package com.Libra.orm;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.MappedSuperclass;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 
 @MappedSuperclass
-public class Person implements Serializable {
+public abstract class Person implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private Date dob;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "account_id", unique = true)
+    private Account account;
+
+
+    public Account getAccount() {
+        return account;
+    }
+
+    public void setAccount(Account account) {
+        this.account = account;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+
+    public Person(Date dob, String firstname, String lastname, String email, String phoneNumber) {
+        this.dob = dob;
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+    }
+
     private String firstname;
     private String lastname;
     private String email;

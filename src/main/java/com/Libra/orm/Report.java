@@ -23,12 +23,12 @@ public class Report {
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id", referencedColumnName = "id")
-    private User user;
+    private Account user;
 
     // Getters and setters
     // ...
 
-    public Report(String reportName, String reportType, Date generationDate, String parameters, User user) {
+    public Report(String reportName, String reportType, Date generationDate, String parameters, Account user) {
         this.reportName = reportName;
         this.reportType = reportType;
         this.generationDate = generationDate;
@@ -68,11 +68,11 @@ public class Report {
         this.parameters = parameters;
     }
 
-    public User getUser() {
+    public Account getUser() {
         return user;
     }
 
-    public void setUser(User user) {
+    public void setUser(Account user) {
         this.user = user;
     }
 
