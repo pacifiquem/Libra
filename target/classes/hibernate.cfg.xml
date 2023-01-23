@@ -6,7 +6,7 @@
         <property name="hibernate.transaction.factory_class">org.hibernate.transaction.JDBCTransactionFactory</property>
 
         <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
-        <property name="hibernate.connection.url">jdbc:mysql://127.0.0.1:3306/libra</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/Libra</property>
         <property name="hibernate.connection.username">root</property>
 
         <property name="hibernate.session_factory_name">SmisSessionFactory</property>
@@ -33,11 +33,10 @@
         <!-- Models -->
         <mapping class="com.Libra.orm.Account" />
         <mapping class="com.Libra.orm.Acquisition" />
-        <mapping class="com.Libra.orm.Authentication" />
-        <mapping class="com.Libra.orm.Catalog" />
+        <mapping class="com.Libra.orm.Catalogue" />
         <mapping class="com.Libra.orm.Circulation" />
         <mapping class="com.Libra.orm.Patron" />
-        <mapping class="com.Libra.orm.Reporting" />
+        <mapping class="com.Libra.orm.Report" />
         <mapping class="com.Libra.orm.Serial" />
         <mapping class="com.Libra.orm.Book" />
     </session-factory>

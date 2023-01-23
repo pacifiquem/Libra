@@ -1,7 +1,7 @@
 /**
  *
  */
-package rw.ac.util;
+package com.Libra.orm.util;
 
 import org.hibernate.HibernateException;
 import org.hibernate.Session;

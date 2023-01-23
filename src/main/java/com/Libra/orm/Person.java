@@ -18,6 +18,7 @@ public class Person implements Serializable {
     private String lastname;
     private String email;
     private String phoneNumber;
+    private String role;
 
     public String getFirstname() {
         return firstname;
@@ -57,5 +58,13 @@ public class Person implements Serializable {
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 }
