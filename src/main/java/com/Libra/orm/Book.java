@@ -1,3 +1,7 @@
+
+
+//SAME AS CATALOGUE!!!!
+
 package com.Libra.orm;
 
 import javax.persistence.*;
@@ -7,21 +11,24 @@ import java.util.Date;
 @Table(name = "book")
 public class Book {
 
-    public Book(String title, String name, String author, int bookNum, Date pubDate){
+    public Book(String title, String name, String author, int bookNum, Date pubDate, String isLent){
         this.title = title;
         this.name = name;
         this.author = author;
         this.bookNum = bookNum;
         this.pubDate = pubDate;
+        this.isLent = isLent;
     }
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
+
     private String title;
     private String name;
     private String author;
     private int bookNum;
     private Date pubDate;
+    private String isLent;
 
     public int getId() {
         return id;
@@ -69,5 +76,13 @@ public class Book {
 
     public void setPubDate(Date pubDate) {
         this.pubDate = pubDate;
+    }
+
+    public String isLent() {
+        return isLent;
+    }
+
+    public void setLent(String lent) {
+        isLent = lent;
     }
 }
