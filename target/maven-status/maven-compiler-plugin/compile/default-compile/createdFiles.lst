@@ -1,0 +1,14 @@
+com\Libra\orm\Account.class
+com\Libra\orm\Patron.class
+com\Libra\orm\Acquisition.class
+com\Libra\orm\CirculationInterface.class
+com\Libra\orm\Report.class
+rw\ac\util\SmisSessionFactory.class
+com\Libra\orm\Book.class
+com\Libra\orm\Serial.class
+com\Libra\orm\PatronInterface.class
+com\Libra\orm\User.class
+com\Libra\orm\Circulation.class
+com\Libra\orm\libraApp\Starter.class
+com\Libra\orm\Person.class
+com\Libra\orm\Catalogue.class
