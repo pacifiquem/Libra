@@ -250,12 +250,17 @@
         <developer>
             <name>Rukundo Honore</name>
             <email>honorerukundo74@gmail.com</email>
-
             <roles>
                 <role>Group Captain</role>
             </roles>
         </developer>
-
+        <developer>
+            <name>Ndizihiwe Regis</name>
+            <email>ndizihiweregis06@gmail.com</email>
+            <roles>
+                <role>Contributor</role>
+            </roles>
+        </developer>
     </developers>
     <inceptionYear>2022</inceptionYear>
     <organization>
