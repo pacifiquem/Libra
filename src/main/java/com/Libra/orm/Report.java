@@ -21,19 +21,15 @@ public class Report {
     @Column(name = "parameters")
     private String parameters;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "user_id", referencedColumnName = "id")
-    private User user;
+//    @ManyToOne(cascade = CascadeType.ALL)
+//    @JoinColumn(name = "user_id", referencedColumnName = "id")
+//    private User user;
 
     // Getters and setters
     // ...
 
-    public Report(String reportName, String reportType, Date generationDate, String parameters, User user) {
-        this.reportName = reportName;
-        this.reportType = reportType;
-        this.generationDate = generationDate;
-        this.parameters = parameters;
-        this.user = user;
+    public Report() {
+
     }
 
     public String getReportName() {
@@ -68,13 +64,6 @@ public class Report {
         this.parameters = parameters;
     }
 
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
 
     public void generateBorrowedBooksReport(Date startDate, Date endDate) {
         // Code to generate a report on the number of books borrowed by patrons
