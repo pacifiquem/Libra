@@ -21,14 +21,25 @@ public class Report {
     @Column(name = "parameters")
     private String parameters;
 
+<<<<<<< HEAD
 //    @ManyToOne(cascade = CascadeType.ALL)
 //    @JoinColumn(name = "user_id", referencedColumnName = "id")
+=======
+>>>>>>> f2ae34d145604528fcab4244bfa32c52f23784e0
 //    private User user;
 
     // Getters and setters
     // ...
 
+<<<<<<< HEAD
     public Report() {
+=======
+    public Report(String reportName, String reportType, Date generationDate, String parameters) {
+        this.reportName = reportName;
+        this.reportType = reportType;
+        this.generationDate = generationDate;
+        this.parameters = parameters;
+>>>>>>> f2ae34d145604528fcab4244bfa32c52f23784e0
 
     }
 

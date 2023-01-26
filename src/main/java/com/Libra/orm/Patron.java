@@ -15,22 +15,17 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-//interface PatronInterface {
-//    void borrowHistory();
-//}
-
 @Entity
 @Table(name = "patron")
-public class Patron extends Person implements PatronInterface {
+public class Patron extends Person {
 
-    public Patron(String firstName, String lastName,String phoneNumber) {
+    public Patron(String firstName, String lastName,String phoneNumber, String role) {
         this.setFirstname(firstName);
         this.setLastname(lastName);
         this.setPhoneNumber(phoneNumber);
+        this.setRole(role);
     }
-    public void borrowHistory(){
-        //borrowed books, dates borrowed, dates returned
-    }
+
 }
 
 
