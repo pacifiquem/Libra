@@ -3,24 +3,26 @@
 <hibernate-configuration>
     <session-factory>
         <property name="hibernate.query.factory_class">org.hibernate.hql.internal.classic.ClassicQueryTranslatorFactory</property>
-        <property name="hibernate.transaction.factory_class">org.hibernate.transaction.JDBCTransactionFactory</property>
+<!--        <property name="hibernate.transaction.factory_class">org.hibernate.transaction.JDBCTransactionFactory</property>-->
 
         <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
         <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/Libra</property>
         <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password"></property>
 
         <property name="hibernate.session_factory_name">SmisSessionFactory</property>
         <property name="hibernate.connection.pool_size">1</property>
-        <property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+<!--        <property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>-->
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
-        <property name="hibernate.default_schema">libra</property>
-        <property name="hibernate.connection.provider_class">org.hibernate.connection.C3P0ConnectionProvider</property>
+<!--        <property name="hibernate.default_schema">libra</property>-->
+<!--        <property name="hibernate.connection.provider_class">org.hibernate.connection.C3P0ConnectionProvider</property>-->
 
         <property name="current_session_context_class">thread</property>
         <property name="hibernate.show_sql">true</property>
         <property name="hibernate.format_sql">true</property>
         <property name="hibernate.use_sql_comments">false</property>
-        <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="hibernate.hbm2ddl.auto">create</property>
+<!--        <property name="hibernate.hbm2ddl.auto">update</property>-->
         <property name="lazy">false</property>
         <property name= "javax.persistence.validation.mode">none</property>
         <!-- c3p0 -->
@@ -38,8 +40,11 @@
         <mapping class="com.Libra.orm.Patron" />
         <mapping class="com.Libra.orm.Report" />
         <mapping class="com.Libra.orm.Serial" />
+<<<<<<< HEAD
         <mapping class="com.Libra.orm.Administrator" />
         <mapping class="com.Libra.orm.dao.AdministratorImpl" />
+=======
+>>>>>>> d3c7ddbb89d1f606c61fc857a28cc36ef90912c9
     </session-factory>
 </hibernate-configuration>
 

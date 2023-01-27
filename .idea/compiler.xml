@@ -10,7 +10,6 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="libms" target="1.8" />
       <module name="Libra" target="1.8" />
     </bytecodeTargetLevel>
   </component>

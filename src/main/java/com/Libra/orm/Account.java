@@ -18,6 +18,57 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+<<<<<<< HEAD
 public class Account {
 
+=======
+
+@Entity(name = "account")
+public class Account {
+    @Id
+     @Column
+     @GeneratedValue(strategy = GenerationType.UUID)
+     private int id;
+
+     @Column
+     private  String username;
+
+     @Column
+     private  String email ;
+
+     @Column
+     private  String password;
+
+ public int getId() {
+  return id;
+ }
+
+ public void setId(int id) {
+  this.id = id;
+ }
+
+ public String getUsername() {
+  return username;
+ }
+
+ public void setUsername(String username) {
+  this.username = username;
+ }
+
+ public String getEmail() {
+  return email;
+ }
+
+ public void setEmail(String email) {
+  this.email = email;
+ }
+
+ public String getPassword() {
+  return password;
+ }
+
+ public void setPassword(String password) {
+  this.password = password;
+ }
+>>>>>>> d3c7ddbb89d1f606c61fc857a28cc36ef90912c9
 }
