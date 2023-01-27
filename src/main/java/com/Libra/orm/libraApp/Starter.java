@@ -1,44 +1,32 @@
 package com.Libra.orm.libraApp;
 
+import com.Libra.orm.Administrator;
+import com.Libra.orm.Patron;
+import com.Libra.orm.dao.AdministratorDAO;
+import com.Libra.orm.dao.AdministratorImpl;
+import com.Libra.orm.dao.PatronDAO;
+import com.Libra.orm.dao.PatronImpl;
+
 import java.util.Date;
 
-import com.Libra.orm.Book;
-import com.Libra.orm.Circulation;
-import com.Libra.orm.Patron;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
-import org.hibernate.cfg.Configuration;
-
-
-import java.util.*;
-
 public class Starter {
+    public static void main(String[] args){
+        AdministratorDAO administratorDAO = new AdministratorImpl();
+        PatronDAO patronDAO = new PatronImpl();
 
-    public static void main(String[] args) {
+        Administrator administrator = new Administrator("john", "doe", new Date()
+                     ,"1028384","Admin", "johndoe@example.com");
+        Patron patron = new Patron("john", "doe",
+                "johndoe@example.com", "8953498539", "user");
 
-        Patron patron = new Patron("Jane", "Doe", "+250789012345", "user");
-        Book book = new Book("Title2", "The fault in our stars", "John Doe", 205, new Date(), "available" );
-        patron.setDob(new Date());
-        patron.setEmail("janedoe@example.com");
+        administratorDAO.addAdministrator(administrator);
+        patronDAO.addPatron(patron);
 
-        Configuration config = new Configuration();
-        config.configure("hibernate.cfg.xml");
-        System.out.println("=== Opening session ===");
+        Administrator administrator1 = administratorDAO.getAdministrator(1);
+        System.out.println(administrator1.getFirstname());
 
-        SessionFactory factory = config.buildSessionFactory();
-        Session session = factory.openSession();
-
-        System.out.println("=== Beginning transaction ===");
-        Transaction transaction = session.beginTransaction();
-
-        //saving object
-        session.saveOrUpdate(patron);
-        session.saveOrUpdate(book);
-
-        transaction.commit();
-        session.close();
-        factory.close();
-
+        Patron patron1 = patronDAO.getPatron(patron.getId());
+        System.out.println(patron1.getFirstname());
     }
+
 }

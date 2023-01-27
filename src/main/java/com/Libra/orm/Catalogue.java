@@ -132,4 +132,6 @@ public class Catalogue {
 
     @Column(name = "available_copies")
     private int availableCopies;
+
+
 }

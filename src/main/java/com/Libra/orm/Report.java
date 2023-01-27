@@ -21,7 +21,6 @@ public class Report {
     @Column(name = "parameters")
     private String parameters;
 
-//    private User user;
 
     // Getters and setters
     // ...

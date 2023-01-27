@@ -1,9 +1,5 @@
 package com.Libra.orm;
 
-import com.Libra.orm.dao.DAO;
-
-import org.hibernate.Query;
-
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -11,7 +7,7 @@ import java.util.Date;
 import java.util.List;
 
 
-public class Circulation extends DAO {
+public class Circulation{
 
     public Circulation(int bookId, String bookName, int borrowerId, String borrowerName, Date borrowDate, Date dueDate, double borrowFine){
         this.bookId = bookId;
@@ -37,7 +33,7 @@ public class Circulation extends DAO {
 
 
 
-    public List<Book> lentBook(){
+    public List<Catalogue> lentBook(){
         //list of lent books
         return null;
     }
