@@ -22,11 +22,14 @@ public class Report {
     private String parameters;
 
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
 //    @ManyToOne(cascade = CascadeType.ALL)
 //    @JoinColumn(name = "user_id", referencedColumnName = "id")
 =======
 >>>>>>> f2ae34d145604528fcab4244bfa32c52f23784e0
 //    private User user;
+>>>>>>> d3c7ddbb89d1f606c61fc857a28cc36ef90912c9
 
     // Getters and setters
     // ...
