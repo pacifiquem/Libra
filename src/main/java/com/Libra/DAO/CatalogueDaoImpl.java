@@ -1,6 +1,10 @@
 package com.Libra.DAO;
 import com.Libra.orm.Catalogue;
+import com.Libra.orm.Patron;
+import org.hibernate.Query;
+
 import java.util.List;
+import java.util.Optional;
 
 public class CatalogueDaoImpl extends DAO implements CatalogueDAO {
 
@@ -17,22 +21,26 @@ public class CatalogueDaoImpl extends DAO implements CatalogueDAO {
 
 
     public void addCatalogue(Catalogue catalogue) {
-        try {
+        try{
             begin();
-            getSession().save(catalogue);
+            getSession().saveOrUpdate(catalogue);
             commit();
-            close();
-
         } catch (Exception e) {
-            e.printStackTrace();
-
+            rollback();
         }
 
     }
 
     @Override
-    public Catalogue getCatalogueById(int id) {
-        return null;
+    public Optional <Catalogue> getCatalogueById(int id) {
+        try {
+            begin();
+            Catalogue catalogue = (Catalogue) getSession().get(Catalogue.class, id);
+            return Optional.ofNullable(catalogue);
+        } catch (Exception e) {
+            rollback();
+            return null;
+        }
     }
 
     public void updateCatalogue(Catalogue catalogue) {
@@ -48,12 +56,28 @@ public class CatalogueDaoImpl extends DAO implements CatalogueDAO {
 
     @Override
     public void deleteCatalogue(int id) {
-
+        Catalogue catalogue = null;
+        try{
+            begin();
+            catalogue = (Catalogue) getSession().get(Catalogue.class, id);
+            getSession().delete(catalogue);
+        }catch(Exception e){
+            rollback();
+        }
     }
 
 
     @Override
     public List<Catalogue> getAllCatalogues() {
-        return null;
+        try{
+            begin();
+            Query query = getSession().createQuery("from catalogue");
+            List <Catalogue> books = query.list();
+            commit();
+            return books;
+        }catch(Exception e){
+            rollback();
+            return null;
+        }
     }
 }

@@ -15,5 +15,5 @@ public interface PatronDAO{
 
     public Patron updatePatron(Patron patron);
 
-    public Patron getPatron(int id);
+    public Optional<Patron> getPatron(int id);
 }

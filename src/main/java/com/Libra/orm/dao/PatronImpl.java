@@ -7,6 +7,7 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 
 import java.util.List;
+import java.util.Optional;
 
 import static com.Libra.orm.dao.DAO.getSession;
 
@@ -55,15 +56,12 @@ public class PatronImpl extends DAO implements PatronDAO{
     }
 
     @Override
-    public Patron getPatron(int id) {
+    public Optional<Patron> getPatron(int id) {
         try {
             begin();
             Patron patron = (Patron) getSession().get(Patron.class, id);
-//            commit();
-            return patron;
+            return Optional.ofNullable(patron);
         } catch (Exception e) {
-            //if admin is not null
-            //and there is an error
             rollback();
             return null;
         }

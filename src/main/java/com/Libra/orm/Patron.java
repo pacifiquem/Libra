@@ -19,10 +19,3 @@ public class Patron extends Person {
 }
 
 
-<<<<<<< HEAD
-=======
-
-
-
-
->>>>>>> d3c7ddbb89d1f606c61fc857a28cc36ef90912c9
