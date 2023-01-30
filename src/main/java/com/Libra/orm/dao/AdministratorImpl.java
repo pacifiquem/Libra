@@ -4,8 +4,10 @@ import com.Libra.orm.Administrator;
 import com.Libra.orm.util.*;
 import org.hibernate.Query;
 import org.hibernate.Session;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.Optional;
 
 public class AdministratorImpl extends DAO implements AdministratorDAO{
 
@@ -53,15 +55,12 @@ public class AdministratorImpl extends DAO implements AdministratorDAO{
     }
 
     @Override
-    public Administrator getAdministrator(int id) {
+    public Optional <Administrator> getAdministrator(int id) {
         try {
             begin();
             Administrator administrator = (Administrator) getSession().get(Administrator.class, id);
-//            commit();
-            return administrator;
+            return Optional.ofNullable(administrator);
         } catch (Exception e) {
-            //if admin is not null
-            //and there is an error
             rollback();
             return null;
         }

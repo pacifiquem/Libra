@@ -18,16 +18,11 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-<<<<<<< HEAD
-public class Account {
-
-=======
-
 @Entity(name = "account")
 public class Account {
     @Id
      @Column
-     @GeneratedValue(strategy = GenerationType.UUID)
+     @GeneratedValue(strategy = GenerationType.AUTO)
      private int id;
 
      @Column
@@ -70,5 +65,5 @@ public class Account {
  public void setPassword(String password) {
   this.password = password;
  }
->>>>>>> d3c7ddbb89d1f606c61fc857a28cc36ef90912c9
+
 }
