@@ -1,9 +1,8 @@
 ## Libra  
-Library management system  - 
-Class Assignment    
+Library management system  
 ___
 ### Stack  
-To be built with
+Used to build it
 - Java
 - Herbinate 
 - Maven
@@ -12,9 +11,8 @@ To be built with
  ### Maintainers
  Maintained by 
 - [@pacifiquem](https://github.com/pacifiquem)
-- [@ndzhwr](https://github.com/ndzhwr)
 
-### Contributos
+### Contributors
  Built by 
 - [@pacifiquem](https://github.com/pacifiquem)
 - [@ndzhwr](https://github.com/ndzhwr)
